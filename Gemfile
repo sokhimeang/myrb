@@ -1,8 +1,11 @@
 source "https://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
+ruby "2.3.1"
+gem "minitest", group: :test
+gem "minitest-reporters", group: :test
 gem "puma", "~> 3.11"
-gem "rails", "~> 5.1.6"
+gem "rails", "~> 5.2.1"
 gem "rubocop", "~> 0.54.0", require: false
 gem "sass-rails", "~> 5.0"
 gem "sqlite3"
@@ -28,6 +31,8 @@ end
 group :test do
   gem "capybara", ">= 2.15"
   gem "chromedriver-helper"
+  gem "guard"
+  gem "guard-minitest"
   gem "selenium-webdriver"
 end
 
